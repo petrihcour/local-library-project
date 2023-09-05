@@ -12,7 +12,12 @@ function findAuthorById(authors, id) {
 // use find method to see if book id has the specified id 
 
 function findBookById(books, id) {
-  return books.find(book => book.id === id);
+  for (let i in books) {
+    if (books[i].id === id) {
+      return books[i];
+    }
+  }
+  return null;
 }
 
 //GOAL: returns an array with two arrays inside of it. all inputted books are in either the first or second array. 
